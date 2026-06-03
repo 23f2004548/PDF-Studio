@@ -9,22 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Download file mappings per platform
   const downloadFiles = {
     windows: {
-      name: releaseBaseUrl + "PDF%20Studio%20Setup%201.0.0.exe",
+      name: releaseBaseUrl + "PDF.Studio.Setup.1.0.0.exe",
       text: "Download for Windows",
       helpText: "How to Install (SmartScreen guide)"
     },
     macos: {
-      name: releaseBaseUrl + "PDF%20Studio-1.0.0-arm64.dmg",
+      name: releaseBaseUrl + "PDF.Studio-1.0.0-arm64.dmg",
       text: "Download for macOS (Apple Silicon)",
       helpText: "How to Install & Open"
     },
     "macos-intel": {
-      name: releaseBaseUrl + "PDF%20Studio-1.0.0.dmg",
+      name: releaseBaseUrl + "PDF.Studio-1.0.0.dmg",
       text: "Download for macOS (Intel)",
       helpText: "How to Install & Open"
     },
     linux: {
-      name: releaseBaseUrl + "PDF%20Studio-1.0.0.AppImage",
+      name: releaseBaseUrl + "PDF.Studio-1.0.0.AppImage",
       text: "Download for Linux",
       helpText: "How to Setup & Run"
     }
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Installing PDF Studio on Windows",
       description: "Because PDF Studio is distributed directly, Windows SmartScreen will show a warning when running the installer. This is completely normal for independent software. Please follow these steps:",
       steps: [
-        { num: "Step 1", text: "Double-click the downloaded <strong>PDF Studio Setup 1.0.0.exe</strong> file." },
+        { num: "Step 1", text: "Double-click the downloaded <strong>PDF.Studio.Setup.1.0.0.exe</strong> file." },
         { num: "Step 2", text: "When the SmartScreen prompt pops up (\"Windows protected your PC\"), click on the <strong>\"More Info\"</strong> link under the warning." },
         { num: "Step 3", text: "Click the <strong>\"Run Anyway\"</strong> button that appears at the bottom right to launch the installer safely." }
       ]
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Installing PDF Studio on macOS (Apple Silicon)",
       description: "Because PDF Studio is not downloaded from the App Store, macOS Gatekeeper may show a warning when launching the app. Please follow these steps to open it:",
       steps: [
-        { num: "Step 1", text: "Double-click the downloaded <strong>PDF Studio-1.0.0-arm64.dmg</strong> file, and drag the PDF Studio icon into your <strong>Applications</strong> folder." },
+        { num: "Step 1", text: "Double-click the downloaded <strong>PDF.Studio-1.0.0-arm64.dmg</strong> file, and drag the PDF Studio icon into your <strong>Applications</strong> folder." },
         { num: "Step 2", text: "If you see a security warning on launch, open <strong>System Settings > Privacy & Security</strong>." },
         { num: "Step 3", text: "Scroll down to the <strong>Security</strong> section, and click <strong>'Open Anyway'</strong> next to PDF Studio to verify and launch it." }
       ]
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Installing PDF Studio on macOS (Intel)",
       description: "Because PDF Studio is not downloaded from the App Store, macOS Gatekeeper may show a warning when launching the app. Please follow these steps to open it:",
       steps: [
-        { num: "Step 1", text: "Double-click the downloaded <strong>PDF Studio-1.0.0.dmg</strong> file, and drag the PDF Studio icon into your <strong>Applications</strong> folder." },
+        { num: "Step 1", text: "Double-click the downloaded <strong>PDF.Studio-1.0.0.dmg</strong> file, and drag the PDF Studio icon into your <strong>Applications</strong> folder." },
         { num: "Step 2", text: "If you see a security warning on launch, open <strong>System Settings > Privacy & Security</strong>." },
         { num: "Step 3", text: "Scroll down to the <strong>Security</strong> section, and click <strong>'Open Anyway'</strong> next to PDF Studio to verify and launch it." }
       ]
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "Running PDF Studio on Linux",
       description: "PDF Studio is distributed as a portable AppImage. To launch it, you just need to allow executable permissions. Please follow these steps:",
       steps: [
-        { num: "Step 1", text: "Locate the downloaded <strong>PDF Studio-1.0.0.AppImage</strong> file and right-click it to open <strong>Properties</strong>." },
+        { num: "Step 1", text: "Locate the downloaded <strong>PDF.Studio-1.0.0.AppImage</strong> file and right-click it to open <strong>Properties</strong>." },
         { num: "Step 2", text: "Navigate to the <strong>Permissions</strong> tab and check the box that says <strong>'Allow executing file as program'</strong>." },
         { num: "Step 3", text: "Close the properties window and double-click the file to open. Alternatively, run <code>chmod +x</code> via terminal." }
       ]
@@ -115,9 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footerDownloadBtnText) footerDownloadBtnText.textContent = fileData.text;
     if (helpBtnText) helpBtnText.textContent = fileData.helpText;
 
-    // Toggle active platform class for links
+    // Toggle active platform class for links and update their hrefs
     document.querySelectorAll('.alt-link').forEach(link => {
-      if (link.getAttribute('data-platform') === platform) {
+      const p = link.getAttribute('data-platform');
+      if (downloadFiles[p]) {
+        link.setAttribute('href', downloadFiles[p].name);
+      }
+      if (p === platform) {
         link.classList.add('active-platform');
       } else {
         link.classList.remove('active-platform');
