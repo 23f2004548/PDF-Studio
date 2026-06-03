@@ -1,19 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // GitHub Release configuration
+  const githubUser = "23f2004548";
+  const githubRepo = "PDF-Studio";
+  const releaseVersion = "v1.0.0";
+  const releaseBaseUrl = `https://github.com/${githubUser}/${githubRepo}/releases/download/${releaseVersion}/`;
+
   // Download file mappings per platform
   const downloadFiles = {
     windows: {
-      name: "PDF Studio Setup 1.0.0.exe",
+      name: releaseBaseUrl + "PDF%20Studio%20Setup%201.0.0.exe",
       text: "Download for Windows",
       helpText: "How to Install (SmartScreen guide)"
     },
     macos: {
-      name: "PDF Studio-1.0.0.dmg",
+      name: releaseBaseUrl + "PDF%20Studio-1.0.0.dmg",
       text: "Download for macOS",
       helpText: "How to Install & Open"
     },
     linux: {
-      name: "PDF Studio-1.0.0.AppImage",
+      name: releaseBaseUrl + "PDF%20Studio-1.0.0.AppImage",
       text: "Download for Linux",
       helpText: "How to Setup & Run"
     }
