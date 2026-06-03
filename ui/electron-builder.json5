@@ -12,7 +12,7 @@
   ],
   "publish": {
     "provider": "generic",
-    "url": "https://yourdomain.com/downloads/updates/"
+    "url": "https://pdfstudioapp.netlify.app/updates/"
   },
   "win": {
     "icon": "public/logo.png",

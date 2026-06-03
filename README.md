@@ -1,5 +1,7 @@
 # PDF Studio 📄✨
 
+**Live Website**: [pdfstudioapp.netlify.app](https://pdfstudioapp.netlify.app/)
+
 A premium, high-performance desktop PDF reader and studio built with **Electron**, **Vue 3**, and **TypeScript**. PDF Studio is designed from the ground up for speed, clarity, and private, local-first annotations.
 
 ---

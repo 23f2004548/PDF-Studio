@@ -2,8 +2,8 @@
   "name": "pdf-studio",
   "productName": "PDF Studio",
   "description": "Premium Desktop PDF Reader & Studio",
-  "author": "Your Company <support@yourdomain.com>",
-  "homepage": "https://yourdomain.com/downloads/updates/",
+  "author": "PDF Studio <support@pdfstudioapp.netlify.app>",
+  "homepage": "https://pdfstudioapp.netlify.app/",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
