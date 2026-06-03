@@ -14,8 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       helpText: "How to Install (SmartScreen guide)"
     },
     macos: {
+      name: releaseBaseUrl + "PDF%20Studio-1.0.0-arm64.dmg",
+      text: "Download for macOS (Apple Silicon)",
+      helpText: "How to Install & Open"
+    },
+    "macos-intel": {
       name: releaseBaseUrl + "PDF%20Studio-1.0.0.dmg",
-      text: "Download for macOS",
+      text: "Download for macOS (Intel)",
       helpText: "How to Install & Open"
     },
     linux: {
@@ -37,7 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     macos: {
-      title: "Installing PDF Studio on macOS",
+      title: "Installing PDF Studio on macOS (Apple Silicon)",
+      description: "Because PDF Studio is not downloaded from the App Store, macOS Gatekeeper may show a warning when launching the app. Please follow these steps to open it:",
+      steps: [
+        { num: "Step 1", text: "Double-click the downloaded <strong>PDF Studio-1.0.0-arm64.dmg</strong> file, and drag the PDF Studio icon into your <strong>Applications</strong> folder." },
+        { num: "Step 2", text: "If you see a security warning on launch, open <strong>System Settings > Privacy & Security</strong>." },
+        { num: "Step 3", text: "Scroll down to the <strong>Security</strong> section, and click <strong>'Open Anyway'</strong> next to PDF Studio to verify and launch it." }
+      ]
+    },
+    "macos-intel": {
+      title: "Installing PDF Studio on macOS (Intel)",
       description: "Because PDF Studio is not downloaded from the App Store, macOS Gatekeeper may show a warning when launching the app. Please follow these steps to open it:",
       steps: [
         { num: "Step 1", text: "Double-click the downloaded <strong>PDF Studio-1.0.0.dmg</strong> file, and drag the PDF Studio icon into your <strong>Applications</strong> folder." },
