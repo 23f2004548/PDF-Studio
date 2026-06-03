@@ -1,0 +1,54 @@
+name: Build Desktop Application
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    name: Build PDF Studio (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ui/package-lock.json
+
+      - name: Install Dependencies
+        working-directory: ui
+        run: npm ci
+
+      - name: Build Application Package
+        working-directory: ui
+        # Builds target bundle and packages binaries for the host platform runner
+        run: npm run build
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Installer Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-studio-${{ matrix.os }}
+          path: |
+            ui/release/**/*.exe
+            ui/release/**/*.dmg
+            ui/release/**/*.AppImage
+          if-no-files-found: error

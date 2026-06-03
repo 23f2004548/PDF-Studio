@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Studio — PDFs, reimagined.</title>
+  <meta name="description" content="A high-performance, modern desktop PDF viewer designed for speed, clarity, and smart annotations.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Ambient Blur Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container container">
+      <div class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
+        </svg>
+        <span class="logo-text">PDF Studio</span>
+      </div>
+      <nav class="nav">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#preview" class="nav-link">Live Demo</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+      </nav>
+      <div class="header-actions">
+        <a href="PDF%20Studio%20Setup%201.0.0.exe" class="btn btn-primary btn-sm" id="header-download-btn">Download App</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container container">
+      <div class="tagline-container">
+        <span class="mono-badge">VERSION 1.0.0 NOW LIVE</span>
+      </div>
+      <h1 class="hero-title">PDFs, <span class="gradient-text">reimagined.</span></h1>
+      <p class="hero-lead">
+        A premium desktop PDF experience designed for speed and clarity. Smooth page navigation, smart text selection, local annotations, and instant content extraction.
+      </p>
+      
+      <div class="hero-ctas">
+        <a href="PDF%20Studio%20Setup%201.0.0.exe" class="btn btn-primary btn-lg" id="download-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span id="download-btn-text">Download for Windows</span>
+        </a>
+        <button class="btn btn-secondary btn-lg" id="help-trigger-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+          <span id="help-btn-text">How to Install (SmartScreen guide)</span>
+        </button>
+      </div>
+      <div class="platform-alternatives">
+        <span>Available for:</span>
+        <a href="PDF%20Studio%20Setup%201.0.0.exe" class="alt-link" data-platform="windows" id="alt-win">🪟 Windows</a>
+        <span class="divider">•</span>
+        <a href="PDF%20Studio-1.0.0.dmg" class="alt-link" data-platform="macos" id="alt-mac">🍎 macOS</a>
+        <span class="divider">•</span>
+        <a href="PDF%20Studio-1.0.0.AppImage" class="alt-link" data-platform="linux" id="alt-linux">🐧 Linux (.AppImage)</a>
+      </div>
+
+      <!-- App High-Fi Mockup -->
+      <div class="mockup-frame reveal-on-scroll">
+        <div class="mockup-header">
+          <div class="dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="title-bar">PDF Studio — research_notes.pdf</div>
+          <div style="width: 52px;"></div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="sidebar-item active">📁 Documents</div>
+            <div class="sidebar-item">✍️ Highlights</div>
+            <div class="sidebar-item">📝 Study Notes</div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-pdf-page">
+              <div class="pdf-header-row">
+                <h2>1. Introduction to Quantum Computing</h2>
+                <span class="page-num">Page 1 of 24</span>
+              </div>
+              <p>
+                Quantum computing is a rapidly-emerging technology that harnesses the laws of quantum mechanics to solve problems too complex for classical computers. 
+                <mark class="highlight-yellow">Quantum computers utilize quantum bits, or qubits, which can exist in a superposition of states</mark> allowing them to process information exponentially faster.
+              </p>
+              <div class="annotation-card-mock">
+                <div class="card-tag yellow">Comment (Page 1)</div>
+                <p>"Key concept: superposition makes quantum computing vastly faster."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof Section -->
+  <section class="social-proof-section">
+    <div class="container text-center">
+      <p class="social-proof-lead">DEVELOPED FOR POWER USERS, STUDENTS & RESEARCHERS</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <strong>&lt; 50ms</strong>
+          <span>Instant Search Lookup</span>
+        </div>
+        <div class="stat-item">
+          <strong>100% Local</strong>
+          <span>Private and Secure Data</span>
+        </div>
+        <div class="stat-item">
+          <strong>Zero Bloat</strong>
+          <span>No accounts, no advertisements</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Built for <span class="gradient-text-alt">Performance.</span></h2>
+        <p class="section-subtitle">Stripped of all legacy bloat. Optimized for fast-paced study, search, and reading.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1: Instant Search -->
+        <div class="feature-card reveal-on-scroll">
+          <div class="feature-icon-box cyan-grad">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
+          <h3>Instant Search</h3>
+          <p>Index documents instantly and find keywords across pages in less than 50 milliseconds. Never wait for searching again.</p>
+        </div>
+
+        <!-- Feature 2: Smart Annotations -->
+        <div class="feature-card reveal-on-scroll">
+          <div class="feature-icon-box violet-grad">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          <h3>Smart Annotations</h3>
+          <p>Highlight text with four vivid high-contrast colors. Add page notes, write commentary, and organize your studies seamlessly.</p>
+        </div>
+
+        <!-- Feature 3: Study Compilation -->
+        <div class="feature-card reveal-on-scroll">
+          <div class="feature-icon-box indigo-grad">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <h3>Study Compilation</h3>
+          <p>Compile all your highlights, comments, and page-by-page study notes directly into a polished, printable PDF study document.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Mockup Section -->
+  <section id="preview" class="preview-section">
+    <div class="container">
+      <div class="preview-layout">
+        <div class="preview-text">
+          <span class="mono-badge secondary">INTERACTIVE PREVIEW</span>
+          <h2>Experience the <span class="gradient-text">speed</span> of PDF Studio.</h2>
+          <p>Interact with the live card to see how smooth and minimalist the user interface is. Click on the highlights to change their categories or test out the zoom controller.</p>
+          
+          <div class="interactive-controls">
+            <button class="btn-ctrl active" data-zoom="125">125% Zoom</button>
+            <button class="btn-ctrl" data-zoom="150">150% Zoom</button>
+            <button class="btn-ctrl" data-zoom="100">100% Zoom</button>
+          </div>
+        </div>
+
+        <!-- Live Demo Interactive Container -->
+        <div class="live-demo-card">
+          <div class="demo-toolbar">
+            <span class="demo-zoom-indicator">125%</span>
+            <div class="color-picker-row">
+              <span class="color-dot yellow active" data-color="yellow"></span>
+              <span class="color-dot green" data-color="green"></span>
+              <span class="color-dot blue" data-color="blue"></span>
+              <span class="color-dot pink" data-color="pink"></span>
+            </div>
+          </div>
+          <div class="demo-pdf-viewport">
+            <div class="demo-pdf-page zoom-125">
+              <p>
+                PDF Studio is built with Electron and Vue 3 for a light footprint. 
+                <span class="demo-highlight yellow">Its core design system uses translucent highlight layers with the <code>multiply</code> blending mode</span> so your text is always perfectly legible.
+              </p>
+              <p>
+                Try clicking the highlight above to change its color using the selector in the toolbar!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">What students & researchers say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Standard PDF readers are bloated with cloud ads and signature popups. PDF Studio is exactly what I wanted: clean, fast, local, and supports Markdown notes."</p>
+          <div class="testimonial-author">
+            <strong>Sarah Jenkins</strong>
+            <span>Ph.D. Researcher</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"The word highlight and export features are massive time savers. I can highlight multiple phrases across a 100-page paper and compile them into study sheets instantly."</p>
+          <div class="testimonial-author">
+            <strong>David Chen</strong>
+            <span>Computer Science Student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2>Get started with PDF Studio today.</h2>
+      <p>Download the free, lightweight installer and start reading without distraction.</p>
+      <div class="cta-buttons-wrap">
+        <a href="PDF%20Studio%20Setup%201.0.0.exe" class="btn btn-primary btn-lg" id="footer-download-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          <span id="footer-download-btn-text">Download for Windows</span>
+        </a>
+      </div>
+      <div class="platform-alternatives footer-alts">
+        <span>Available for:</span>
+        <a href="PDF%20Studio%20Setup%201.0.0.exe" class="alt-link" data-platform="windows" id="footer-alt-win">🪟 Windows</a>
+        <span class="divider">•</span>
+        <a href="PDF%20Studio-1.0.0.dmg" class="alt-link" data-platform="macos" id="footer-alt-mac">🍎 macOS</a>
+        <span class="divider">•</span>
+        <a href="PDF%20Studio-1.0.0.AppImage" class="alt-link" data-platform="linux" id="footer-alt-linux">🐧 Linux (.AppImage)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 PDF Studio. Developed with speed in mind. Open source.</p>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#preview">Demo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SMART SCREEN BYPASS GUIDE MODAL -->
+  <div class="modal-overlay" id="help-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      <h3 id="modal-title">Installing PDF Studio</h3>
+      <p id="modal-description">Please follow these steps to run PDF Studio on your device:</p>
+      
+      <div class="steps-carousel" id="modal-steps-container">
+        <!-- Steps will be injected dynamically by JavaScript -->
+      </div>
+      <button class="btn btn-primary btn-block" id="modal-ack-btn">Got it, Let's Download!</button>
+    </div>
+  </div>
+
+  <!-- JavaScript file -->
+  <script src="app.js"></script>
+</body>
+</html>
