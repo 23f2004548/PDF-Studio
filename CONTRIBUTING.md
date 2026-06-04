@@ -1,4 +1,4 @@
-# Contributing to PDF Studio 📄
+# Contributing to PDF Studio! 📄
 
 Thank you for your interest in contributing to PDF Studio! We welcome all contributions — bug reports, feature suggestions, documentation improvements, and code changes.
 
