@@ -829,6 +829,13 @@ body {
   text-decoration: none;
   color: var(--text-light);
   transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-links a svg {
+  fill: currentColor;
 }
 
 .footer-links a:hover {
